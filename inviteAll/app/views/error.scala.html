@@ -1,0 +1,16 @@
+@()
+
+@main(Messages("error.title")) {
+    <h1>@Messages("error.header")</h1>
+    
+    <h2>@Messages("error.message")</h2>
+    <p>@Messages("error.desc")</p>
+    <p>@Messages("error.desc2")</p>
+    
+    <p><img id="error_picture" src='@routes.Assets.at("images/confused.png")' /></p>
+    
+    <div id="nav">
+        <a href="@routes.Application.index()"><button id="continue" type="button" autofocus="autofocus">@Messages("error.continue")</button></a>
+        <div style="clear: both"></div>
+    </div>    
+}

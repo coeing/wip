@@ -5,9 +5,13 @@
     
     <h2>@Messages("welcome.message")</h2>
     
-    <p><img src='@routes.Assets.at("images/pixelme.jpg")' /></p>
+    <p><img id="welcome_picture" src='@routes.Assets.at("images/pixelme.jpg")' /></p>
     
     <h2>@Messages("welcome.message2")</h2>
     
-    <a href="@routes.Application.info()"><button autofocus="autofocus">@Messages("welcome.continue")</button></a>  
+    <div id="nav">
+        <a href="@routes.Application.logout()"><button id="back" type="button">@Messages("welcome.logout")</button></a>
+    <a href="@routes.Application.info()"><button id="continue" autofocus="autofocus">@Messages("welcome.continue")</button></a>
+    <div style="clear: both"></div>
+    </div>  
 }

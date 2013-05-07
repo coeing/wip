@@ -7,6 +7,7 @@ welcome.title = Willkommen
 welcome.header = Hallo %s!
 welcome.message = Du bist hier gelandet, weil du die fast 30jährige Geschichte dieses (noch) jungen Mannes mitbestimmt hast.
 welcome.message2 = Daher habe ich eine Party organisiert für dich und all die anderen, die die letzten 30 Jahre zu etwas ganz besonderem für mich gemacht haben.
+welcome.logout = Ausloggen
 welcome.continue = Weiter
 
 info.title = Infos
@@ -18,12 +19,22 @@ info.where = Wo denn?
 info.location = Grüner Jäger St. Pauli
 info.location2 = Neuer Pferdemarkt 36, 20357 Hamburg
 
+info.back = Zurück
 info.continue = Wo muss ich unterschreiben? 
 
 decision.title = Entscheidung
 decision.header = Und, bist du dabei, %s?
 decision.message = (Du kannst deine Entscheidung auch später noch ändern, falls nötig)
 decision.yes = Na sicher!
-decision.no = Leider nicht :(
+decision.no = Leider nicht.
 decision.maybe = Eventuell...
+decision.back = Zurück
 decision.continue = Antworten
+
+error.title = Fehler
+error.header = Unerwarteter Fehler!
+error.message = Hmm, irgendwas ist hier falsch gelaufen.
+error.desc = Am besten du loggst dich mit deinem persönlichen Einladungscode nochmal ein. 
+error.desc2 = Sollte es dann immer noch nicht klappen, schreib mir einfach kurz eine Nachricht.
+error.continue = Einloggen
+

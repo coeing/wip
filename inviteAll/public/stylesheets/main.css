@@ -1,17 +1,92 @@
+html, body  {height:100%; margin:0; padding:0;}
+
 body {
-    font-family: 'Press Start 2P', cursive;
+	font-family: 'Press Start 2P', cursive;
 }
-input, button {
+
+#floater {
+	float: left;
+	height: 50%;
+	margin-bottom: -420px;
+}
+
+#content {
+	clear: both;
+	position: relative;
+	margin: auto;
+    width: 800px;
+    height: 700px;
+    border: 10px solid #000;
+    padding: 20px;
+}
+
+input,button {
 	height: 40px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 20px;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 20px;
 }
 
 img {
 	border: 10px solid #000;
 }
 
-.radio input, .radio label {
-    vertical-align: middle;
-    margin-right: 20px;
+.radio input,.radio label {
+	vertical-align: middle;
+	margin-right: 20px;
 }
+
+a {
+	color: #000;
+}
+
+#nav {
+	margin-top: 50px;
+	position:absolute; 
+	bottom:20px;
+	width: 800px;
+}
+
+#continue, #back {
+    width: 350px;
+    height: 80px;	
+}
+
+#continue {
+    float: right;
+}
+
+#back {
+    float: left;
+}
+
+#login_message {
+	text-align: center;
+}
+
+#code_input {
+    display: block;
+    margin: auto;
+    height: 100px;
+    font-size: 60px;
+    width: 50%;
+    margin-top: 100px;
+}
+
+#code_error {
+    text-align: center;
+}
+
+#welcome_picture, #info_picture, #error_picture
+{
+    display: block;
+    margin: auto;
+}
+
+#decisions {
+	width: 550px;
+}
+
+#decisions, #decisions_feedback {
+	float: left;
+}
+

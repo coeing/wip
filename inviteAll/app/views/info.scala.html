@@ -7,10 +7,14 @@
     <p>@Messages("info.date")</p>
     
     <h2>@Messages("info.where")</h2>
-    <p>@Messages("info.location")</p>
+    <p><a href="http://www.gruener-jaeger-stpauli.de" target="_blank">@Messages("info.location")</a></p>
     <p>@Messages("info.location2")</p>
     
-    <p><img src='@routes.Assets.at("images/gruener_jaeger.gif")' /></p>
+    <p><img id="info_picture" src='@routes.Assets.at("images/gruener_jaeger.gif")' /></p>
     
-    <a href="@routes.Application.decision()"><button autofocus="autofocus">@Messages("info.continue")</button></a>  
+    <div id="nav">
+        <a href="@routes.Application.welcome()"><button id="back" type="button">@Messages("info.back")</button></a>
+        <a href="@routes.Application.decision()"><button id="continue" type="button" autofocus="autofocus">@Messages("info.continue")</button></a>
+        <div style="clear: both"></div>
+    </div>    
 }

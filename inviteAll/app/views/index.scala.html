@@ -3,15 +3,18 @@
 @main(Messages("login.title")) {
     <h1>@Messages("login.header")</h1>
     
-    <h2>@Messages("login.message")</h2>
+    <h2 id="login_message">@Messages("login.message")</h2>
     
     @helper.form(action = routes.Application.login){
     
-    <input type="text" name="code" value='@form("code").value' autocomplete="off"/>
+    <input id="code_input" type="text" name="code" value='@form("code").value' autocomplete="off"/>
     @if(form("code").hasErrors) {
-    	<p>@Messages(form("code").error.get.message)</p>
+    	<p id="code_error">@Messages(form("code").error.get.message)</p>
     }
     
-    <input type="submit" value="Enter" />  
+    <div id="nav">
+    <input id="continue" type="submit" value="Enter" />
+    <div style="clear: both"></div>
+    </div>  
     }
 }

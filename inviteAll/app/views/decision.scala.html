@@ -7,17 +7,23 @@
     
     @helper.form(action = routes.Application.submitDecision) {
     
-	    <p>
+        <div>
+	    <div id="decisions">
 	    <div class="radio"><input type="radio" name="decision" value="yes" onchange="showSmiley('smile')"><label onclick="changeDecision('yes')">@Messages("decision.yes")</label></div>
 	    <div class="radio"><input type="radio" name="decision" value="no" onchange="showSmiley('cry')"><label onclick="changeDecision('no')">@Messages("decision.no")</label></div>
 	    <div class="radio"><input type="radio" name="decision" value="maybe" onchange="showSmiley('neutral')"><label onclick="changeDecision('maybe')">@Messages("decision.maybe")</label></div>
-	    </p>
+	    </div>
 	    	    
-	    <p>
-	    <img id="decisionSmiley" src='@routes.Assets.at("images/neutral.png")'/>
-	    </p>
+	    <div id="decisions_feedback">
+	    <img id="decisionSmiley" src='@routes.Assets.at("images/think.png")'/>
+	    </div>
+            <div style="clear: both"></div>  
+	    </div>
 	    
-        <input type="submit" value='@Messages("decision.continue")' />  
-	    
+	    <div id="nav">
+	        <a href="@routes.Application.info()"><button id="back" type="button">@Messages("decision.back")</button></a>
+            <input id="continue" type="submit" value='@Messages("decision.continue")' />
+            <div style="clear: both"></div>  
+	    </div>
     }  
 }

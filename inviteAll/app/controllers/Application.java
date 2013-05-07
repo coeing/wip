@@ -34,12 +34,18 @@ public class Application extends Controller {
     	return redirect(routes.Application.welcome());
     }
     
+    public static Result logout()
+    {
+    	session().clear();
+    	return redirect(routes.Application.index());
+    }
+    
     public static Result welcome()
     {
     	Guest guest = GuestController.getLoggedInGuest(ctx());
     	if (guest == null)
     	{
-    		return badRequest("Not logged in");
+    		return badRequest(error.render());
     	}
     	return ok(welcome.render(guest));
     }
@@ -49,7 +55,7 @@ public class Application extends Controller {
     	Guest guest = GuestController.getLoggedInGuest(ctx());
     	if (guest == null)
     	{
-    		return badRequest("Not logged in");
+    		return badRequest(error.render());
     	}
     	return ok(info.render(guest));
     }
@@ -59,7 +65,7 @@ public class Application extends Controller {
     	Guest guest = GuestController.getLoggedInGuest(ctx());
     	if (guest == null)
     	{
-    		return badRequest("Not logged in");
+    		return badRequest(error.render());
     	}
     	return ok(decision.render(guest));
     }
