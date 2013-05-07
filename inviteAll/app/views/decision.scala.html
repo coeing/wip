@@ -1,4 +1,4 @@
-@(guest: models.Guest)
+@(guest: models.Guest, form: Form[_])
 
 @main(Messages("decision.title")) {
     <h1>@String.format(Messages("decision.header"), guest.name)</h1>
@@ -9,9 +9,9 @@
     
         <div>
 	    <div id="decisions">
-	    <div class="radio"><input type="radio" name="decision" value="yes" onchange="showSmiley('smile')"><label onclick="changeDecision('yes')">@Messages("decision.yes")</label></div>
-	    <div class="radio"><input type="radio" name="decision" value="no" onchange="showSmiley('cry')"><label onclick="changeDecision('no')">@Messages("decision.no")</label></div>
-	    <div class="radio"><input type="radio" name="decision" value="maybe" onchange="showSmiley('neutral')"><label onclick="changeDecision('maybe')">@Messages("decision.maybe")</label></div>
+	    <div class="radio"><input type="radio" name="decision" value="@models.Decision.YES.toString()" onchange="showSmiley('smile')"><label onclick="changeDecision('@models.Decision.YES.toString()')">@Messages("decision.yes")</label></div>
+	    <div class="radio"><input type="radio" name="decision" value="@models.Decision.NO.toString()" onchange="showSmiley('cry')"><label onclick="changeDecision('@models.Decision.NO.toString()')">@Messages("decision.no")</label></div>
+	    <div class="radio"><input type="radio" name="decision" value="@models.Decision.MAYBE.toString()" onchange="showSmiley('neutral')"><label onclick="changeDecision('@models.Decision.MAYBE.toString()')">@Messages("decision.maybe")</label></div>
 	    </div>
 	    	    
 	    <div id="decisions_feedback">
@@ -20,6 +20,15 @@
             <div style="clear: both"></div>  
 	    </div>
 	    
+	    @if(form("decision").hasErrors) {
+	        <p id="decision_error">@Messages(form("decision").error.get.message)</p>
+	    }
+        
+        <script type="text/javascript">
+            // Initial value.
+            changeDecision('@form("decision").value');
+        </script>
+        	    
 	    <div id="nav">
 	        <a href="@routes.Application.info()"><button id="back" type="button">@Messages("decision.back")</button></a>
             <input id="continue" type="submit" value='@Messages("decision.continue")' />

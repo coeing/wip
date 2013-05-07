@@ -30,6 +30,23 @@ decision.no = Leider nicht.
 decision.maybe = Eventuell...
 decision.back = Zurück
 decision.continue = Antworten
+decision.errors.no_decision = Bitte wähl' eine der Optionen aus!
+decision.errors.invalid_decision = Ungültige Option ausgewählt, das sollte eigentlich nicht passieren!
+decision.logout = Fertig
+
+decision.yes.title = Entscheidung
+decision.yes.header = YIPPIEH!
+decision.yes.message = Freu mich jetzt schon darauf mit dir zu feiern!
+
+decision.no.title = Entscheidung
+decision.no.header = Noooooo
+decision.no.message = Schade, ich hätte sehr gern mit dir gefeiert!
+decision.no.message2 = Falls du es dir anders überlegst, kannst du dich einfach nochmal mit deinem Code einloggen und deine Entscheidung ändern.
+
+decision.maybe.title = Entscheidung
+decision.maybe.header = Überlegs dir!
+decision.maybe.message = Würde mich sehr freuen, wenn du dich noch dazu entscheidest zu kommen.
+decision.maybe.message2 = Du kannst dich einfach nochmal mit deinem Code einloggen, sobald du dich entschieden hast.
 
 error.title = Fehler
 error.header = Unerwarteter Fehler!

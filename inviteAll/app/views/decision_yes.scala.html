@@ -1,0 +1,15 @@
+@(guest: models.Guest) 
+
+@main(Messages("decision.yes.title")) {
+	<h1>@String.format(Messages("decision.yes.header"), guest.name)</h1>
+	
+	<p>@Messages("decision.yes.message")</p>
+	
+    <p><img id="error_picture" src='@routes.Assets.at("images/meme-happy.png")' /></p>
+    
+	<div id="nav">
+		<a href="@routes.Application.decision()"><button id="back" type="button">@Messages("decision.back")</button></a> 
+		<a href="@routes.Application.logout()"><button id="continue" type="button">@Messages("decision.logout")</button></a>
+		<div style="clear: both"></div>
+	</div>
+}
