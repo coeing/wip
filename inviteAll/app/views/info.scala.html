@@ -1,0 +1,16 @@
+@(guest: models.Guest)
+
+@main(Messages("info.title")) {
+    <h1>@Messages("info.header")</h1>
+    
+    <h2>@Messages("info.when")</h2>
+    <p>@Messages("info.date")</p>
+    
+    <h2>@Messages("info.where")</h2>
+    <p>@Messages("info.location")</p>
+    <p>@Messages("info.location2")</p>
+    
+    <p><img src='@routes.Assets.at("images/gruener_jaeger.gif")' /></p>
+    
+    <a href="@routes.Application.decision()"><button autofocus="autofocus">@Messages("info.continue")</button></a>  
+}

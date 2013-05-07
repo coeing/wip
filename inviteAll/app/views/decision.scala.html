@@ -1,0 +1,23 @@
+@(guest: models.Guest)
+
+@main(Messages("decision.title")) {
+    <h1>@String.format(Messages("decision.header"), guest.name)</h1>
+    
+    <p>@Messages("decision.message")</p>
+    
+    @helper.form(action = routes.Application.submitDecision) {
+    
+	    <p>
+	    <div class="radio"><input type="radio" name="decision" value="yes" onchange="showSmiley('smile')"><label onclick="changeDecision('yes')">@Messages("decision.yes")</label></div>
+	    <div class="radio"><input type="radio" name="decision" value="no" onchange="showSmiley('cry')"><label onclick="changeDecision('no')">@Messages("decision.no")</label></div>
+	    <div class="radio"><input type="radio" name="decision" value="maybe" onchange="showSmiley('neutral')"><label onclick="changeDecision('maybe')">@Messages("decision.maybe")</label></div>
+	    </p>
+	    	    
+	    <p>
+	    <img id="decisionSmiley" src='@routes.Assets.at("images/neutral.png")'/>
+	    </p>
+	    
+        <input type="submit" value='@Messages("decision.continue")' />  
+	    
+    }  
+}

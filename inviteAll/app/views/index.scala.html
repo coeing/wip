@@ -1,7 +1,17 @@
-@(message: String)
+@(form: Form[_])
 
-@main("Welcome to Play 2.1") {
+@main(Messages("login.title")) {
+    <h1>@Messages("login.header")</h1>
     
-    @play20.welcome(message, style = "Java")
+    <h2>@Messages("login.message")</h2>
     
+    @helper.form(action = routes.Application.login){
+    
+    <input type="text" name="code" value='@form("code").value' autocomplete="off"/>
+    @if(form("code").hasErrors) {
+    	<p>@Messages(form("code").error.get.message)</p>
+    }
+    
+    <input type="submit" value="Enter" />  
+    }
 }

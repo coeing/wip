@@ -1,0 +1,29 @@
+login.title = Eingang
+login.header = Willkommen
+login.message = Bitte gib deinen persönlichen Einladungscode ein:
+login.errors.invalid_code = Ungültiger Code. Vielleicht vertippt?
+
+welcome.title = Willkommen
+welcome.header = Hallo %s!
+welcome.message = Du bist hier gelandet, weil du die fast 30jährige Geschichte dieses (noch) jungen Mannes mitbestimmt hast.
+welcome.message2 = Daher habe ich eine Party organisiert für dich und all die anderen, die die letzten 30 Jahre zu etwas ganz besonderem für mich gemacht haben.
+welcome.continue = Weiter
+
+info.title = Infos
+info.header = Infos zur Party
+info.when = Wann denn?
+info.date = Samstag, 10.08.2013, 20:00 Uhr
+
+info.where = Wo denn?
+info.location = Grüner Jäger St. Pauli
+info.location2 = Neuer Pferdemarkt 36, 20357 Hamburg
+
+info.continue = Wo muss ich unterschreiben? 
+
+decision.title = Entscheidung
+decision.header = Und, bist du dabei, %s?
+decision.message = (Du kannst deine Entscheidung auch später noch ändern, falls nötig)
+decision.yes = Na sicher!
+decision.no = Leider nicht :(
+decision.maybe = Eventuell...
+decision.continue = Antworten

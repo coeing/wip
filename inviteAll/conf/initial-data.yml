@@ -1,0 +1,5 @@
+guests:
+- !!models.Guest
+   name: Heike
+   code: ABC
+   isGroup: false

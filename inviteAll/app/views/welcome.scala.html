@@ -1,0 +1,13 @@
+@(guest: models.Guest)
+
+@main(Messages("welcome.title")) {
+    <h1>@String.format(Messages("welcome.header"), guest.name)</h1>
+    
+    <h2>@Messages("welcome.message")</h2>
+    
+    <p><img src='@routes.Assets.at("images/pixelme.jpg")' /></p>
+    
+    <h2>@Messages("welcome.message2")</h2>
+    
+    <a href="@routes.Application.info()"><button autofocus="autofocus">@Messages("welcome.continue")</button></a>  
+}

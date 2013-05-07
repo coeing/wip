@@ -4,6 +4,14 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+POST    /login                      controllers.Application.login()
+
+GET     /welcome                    controllers.Application.welcome()
+
+GET     /info                       controllers.Application.info()
+
+GET     /decision                   controllers.Application.decision()
+POST    /decision                   controllers.Application.submitDecision()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
