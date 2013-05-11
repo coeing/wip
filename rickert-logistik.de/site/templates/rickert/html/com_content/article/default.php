@@ -26,9 +26,9 @@ $params = $this->item->params;
 <?php if ($this->params->get('show_page_heading') and $params->get('show_title')) :?>
 <hgroup>
 <?php endif; ?>
-<h1>
+<h2 class="PostHeaderIcon-wrapper">
 	<?php echo $this->escape($this->params->get('page_heading')); ?>
-</h1>
+</h2>
 <?php endif; ?>
 <?php
 if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && $this->item->paginationrelative)

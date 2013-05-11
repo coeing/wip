@@ -1,7 +1,3 @@
-/* begin Page */
-
-/* Design Copyright by Dan O'Riordan of Eaglehawk Design @ www.eaglehawkdesign.com */
-
 body
 {
   margin: 0 auto;
@@ -1089,7 +1085,7 @@ a img
 /* end Box, Post */
 
 /* begin PostHeaderIcon */
-.PostHeaderIcon-wrapper, h1
+.PostHeaderIcon-wrapper
 {
   text-decoration:none;
   margin: 0.2em 0;
@@ -1113,7 +1109,7 @@ a img
 /*  color: #e60000;*/
 }
 
-.PostHeaderIcon-wrapper, .PostHeaderIcon-wrapper a, .PostHeaderIcon-wrapper a:link, .PostHeaderIcon-wrapper a:visited, .PostHeaderIcon-wrapper a:hover, h1
+.PostHeaderIcon-wrapper, .PostHeaderIcon-wrapper a, .PostHeaderIcon-wrapper a:link, .PostHeaderIcon-wrapper a:visited, .PostHeaderIcon-wrapper a:hover
 {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans-Serif;
   font-size: 18px;
@@ -1602,11 +1598,11 @@ input, select
 {
   position: relative;
   margin: 0;
-  padding: 0;
+  padding: 17px;
   border: 0;
   float: left;
   overflow: hidden;
-  width: 669px;
+  width: 635px;
 }
 
 /* end LayoutCell */
