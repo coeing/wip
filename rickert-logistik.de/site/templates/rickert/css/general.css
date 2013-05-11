@@ -270,7 +270,7 @@ html:first-child .PageBackgroundGlare
 /* begin Menu */
 /* menu structure */
 
-.artmenu a, .artmenu a:link, .artmenu a:visited, .artmenu a:hover
+.menu a, .menu a:link, .menu a:visited, .menu a:hover
 {
   text-align:left;
   text-decoration:none;
@@ -279,7 +279,7 @@ html:first-child .PageBackgroundGlare
   word-spacing:normal;
 }
 
-.artmenu, .artmenu ul
+.menu, .menu ul
 {
   margin: 0;
   padding: 0;
@@ -288,7 +288,7 @@ html:first-child .PageBackgroundGlare
   display: block;
 }
 
-.artmenu li
+.menu li
 {
   margin: 0;
   padding: 0;
@@ -300,18 +300,18 @@ html:first-child .PageBackgroundGlare
   background:none;
 }
 
-.artmenu li:hover
+.menu li:hover
 {
   z-index: 10000;
   white-space: normal;
 }
 
-.artmenu li li
+.menu li li
 {
   float: none;
 }
 
-.artmenu ul
+.menu ul
 {
   visibility: hidden;
   position: absolute;
@@ -321,19 +321,19 @@ html:first-child .PageBackgroundGlare
   background:none;
 }
 
-.artmenu li:hover>ul
+.menu li:hover>ul
 {
   visibility: visible;
   top: 100%;
 }
 
-.artmenu li li:hover>ul
+.menu li li:hover>ul
 {
   top: 0;
   left: 100%;
 }
 
-.artmenu:after, .artmenu ul:after
+.menu:after, .menu ul:after
 {
   content: ".";
   height: 0;
@@ -342,19 +342,19 @@ html:first-child .PageBackgroundGlare
   overflow: hidden;
   clear: both;
 }
-.artmenu, .artmenu ul
+.menu, .menu ul
 {
   min-height: 0;
 }
 
-.artmenu ul
+.menu ul
 {
   background-image: url(../images/spacer.gif);
   padding: 10px 30px 30px 30px;
   margin: -10px 0 0 -30px;
 }
 
-.artmenu ul ul
+.menu ul ul
 {
   padding: 30px 30px 30px 10px;
   margin: -30px 0 0 -10px;
@@ -362,7 +362,7 @@ html:first-child .PageBackgroundGlare
 
 
 /* menu structure */
-
+/*
 .nav
 {
   position: relative;
@@ -370,9 +370,9 @@ html:first-child .PageBackgroundGlare
   width: 892px;
   height: 24px;
   z-index: 100;
-}
+} */
 
-.artmenu
+.menu
 {
   padding: 0px 10px 0px 10px;
 }
@@ -1301,7 +1301,7 @@ li
 
 
 
-.Post ul li
+.Post ul li, .item-page ul li
 {
   padding:0px 0 20px 16px;
   background-image: url('../images/PostBullets.png');
