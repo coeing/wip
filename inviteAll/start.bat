@@ -1,1 +1,1 @@
-play start
+play -Dconfig.file=conf/prod.conf start

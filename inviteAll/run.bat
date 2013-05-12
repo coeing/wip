@@ -1,1 +1,2 @@
-play ~run
+play -Dconfig.file=conf/dev.conf ~run
+pause

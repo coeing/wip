@@ -4,28 +4,24 @@
 # --- !Ups
 
 create table guest (
-  id                        integer not null,
+  id                        integer auto_increment not null,
   name                      varchar(255),
   code                      varchar(255),
-  is_group                  boolean,
+  is_group                  tinyint(1) default 0,
   decision                  integer,
   constraint ck_guest_decision check (decision in (0,1,2)),
   constraint uq_guest_code unique (code),
   constraint pk_guest primary key (id))
 ;
 
-create sequence guest_seq;
-
 
 
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists guest;
+drop table guest;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists guest_seq;
+SET FOREIGN_KEY_CHECKS=1;
 
