@@ -7,3 +7,7 @@ guests:
    name: Nick
    code: SG
    isGroup: false
+- !!models.Guest
+   name: Jan
+   code: SNYP
+   isGroup: false
