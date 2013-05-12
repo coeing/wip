@@ -50,14 +50,40 @@ decision.maybe.header = Überlegs dir!
 decision.maybe.message = Würde mich sehr freuen, wenn du dich noch dazu entscheidest zu kommen.
 decision.maybe.message2 = Du kannst dich einfach nochmal mit deinem Code einloggen, sobald du dich entschieden hast.
 
+questions.title = Fragen
+questions.header = Fragen über Fragen (1/2)
+questions.message = Dadurch, dass du kurz die paar folgenden Fragen beantwortest, hilfst du mir die Party noch besser zu planen. Danke dafür!
+questions.question1 = Kommst du mit Anhang, der keine eigene Einladung bekommen hat?
+questions.question1.answerA = Ja
+questions.question1.answerB = Nein
+questions.question1.answerC = Vielleicht
+questions.errors.no_bringsPartner = Bitte Antwort wählen.
+questions.question2 = Brauchst du eine Übernachtungsmöglichkeit? 
+questions.question2.answerA = Ja
+questions.question2.answerB = Nein
+questions.question2.answerC = Vielleicht
+questions.errors.no_needsBed = Bitte Antwort wählen.
+questions.question3 = Ich werde ein kleines Buffet aufbauen. Hast du Lust etwas kleines dazu beizutragen? 
+questions.question3.answerA = Ja, und zwar:
+questions.question3.answerB = Nein
+questions.question3.answerC = Vielleicht
+questions.errors.no_food = Sag schon, was bringst du Leckeres mit? :)
+questions.errors.no_bringsFood = Bitte Antwort wählen.
+questions.continue = Weiter
+questions.back = Zurück
+
+questions2.header = Fragen über Fragen (2/2)
+
 summary.title = Zusammenfassung
 summary.header = Bis bald!
-summary.message = Trag dir die Feier am besten gleich in den Kalender ein:
+summary.message = Nun trag dir die Feier am besten gleich in den Kalender ein:
 summary.date = Samstag, 10.08.2013 ab 20:00 Uhr
 summary.location = Grüner Jäger, Neuer Pferdemarkt 36, 20357 Hamburg
 summary.add_to_calendar = Automatisch zum Kalender hinzufügen:
 summary.back = Zurück
 summary.logout = Ausloggen
+
+error.invalid_value = Ungültiger Wert. Das, äh, sollte nicht passieren!
 
 error.title = Fehler
 error.header = Unerwarteter Fehler!

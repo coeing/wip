@@ -1,0 +1,47 @@
+@(guest: models.Guest, form: Form[_])
+
+@main(Messages("questions.title")) {
+    <h1>@String.format(Messages("questions.header"), guest.name)</h1>
+    
+    <p>@Messages("questions.message")</p>
+    
+    @helper.form(action = routes.Application.submitQuestions) {
+        
+        <h2>@Messages("questions.question1")</h2>
+    
+        
+        <div class="answers">
+            <div class="radio"><input type="radio" id="bringsPartnerYes" name="bringsPartner" value="@models.Decision.YES.toString()"><label onclick="doClick('bringsPartnerYes')">@Messages("questions.question1.answerA")</label></div>
+            <div class="radio"><input type="radio" id="bringsPartnerNo" name="bringsPartner" value="@models.Decision.NO.toString()"><label onclick="doClick('bringsPartnerNo')">@Messages("questions.question1.answerB")</label></div>
+            <div class="radio"><input type="radio" id="bringsPartnerMaybe" name="bringsPartner" value="@models.Decision.MAYBE.toString()"><label onclick="doClick('bringsPartnerMaybe')">@Messages("questions.question1.answerC")</label></div>
+        </div>
+        
+        @if(form("bringsPartner").hasErrors) {
+            <p class="form_error">@Messages(form("bringsPartner").error.get.message)</p>
+        }
+    
+        <h2>@Messages("questions.question2")</h2>
+        
+        <div class="answers">
+            <div class="radio"><input type="radio" id="needsBedYes" name="needsBed" value="@models.Decision.YES.toString()"><label onclick="doClick('needsBedYes')">@Messages("questions.question2.answerA")</label></div>
+            <div class="radio"><input type="radio" id="needsBedNo" name="needsBed" value="@models.Decision.NO.toString()"><label onclick="doClick('needsBedNo')">@Messages("questions.question2.answerB")</label></div>
+            <div class="radio"><input type="radio" id="needsBedMaybe" name="needsBed" value="@models.Decision.MAYBE.toString()"><label onclick="doClick('needsBedMaybe')">@Messages("questions.question2.answerC")</label></div>
+        </div>
+        
+        @if(form("needsBed").hasErrors) {
+            <p class="form_error">@Messages(form("needsBed").error.get.message)</p>
+        }
+        
+        <script type="text/javascript">
+            // Initial values.
+            changeRadio('bringsPartner', '@form("bringsPartner").value');
+            changeRadio('needsBed', '@form("needsBed").value');
+        </script>
+        	    
+	    <div id="nav">
+	        <a href="@routes.Application.decision()"><button id="back" type="button">@Messages("questions.back")</button></a>
+            <input id="continue" type="submit" value='@Messages("questions.continue")' />
+            <div style="clear: both"></div>  
+	    </div>
+    }  
+}

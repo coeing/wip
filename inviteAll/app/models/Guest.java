@@ -3,6 +3,7 @@ package models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 import play.db.ebean.Model;
 
@@ -22,13 +23,22 @@ public class Guest extends Model {
 
 	@Id
 	public Integer id;
-	
+
 	public String name;
-	
-	@Column(unique=true)
+
+	@Column(unique = true)
 	public String code;
-	
+
 	public boolean isGroup;
-	
+
 	public Decision decision;
+
+	public Decision bringsPartner;
+
+	public Decision needsBed;
+
+	public Decision bringsFood;
+
+	@Size(max = 255)
+	public String food;
 }

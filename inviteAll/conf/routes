@@ -14,6 +14,12 @@ GET     /info                       controllers.Application.info()
 GET     /decision                   controllers.Application.decision()
 POST    /decision                   controllers.Application.submitDecision()
 
+GET     /questions                  controllers.Application.questions()
+POST    /questions                  controllers.Application.submitQuestions()
+
+GET     /questions2                 controllers.Application.questions2()
+POST    /questions2                 controllers.Application.submitQuestions2()
+
 GET     /summary                    controllers.Application.summary()
 
 GET     /reminder                   controllers.Application.reminder(extension: String)

@@ -8,9 +8,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import models.CodeFormData;
+import models.Decision;
 import models.DecisionFormData;
 import models.Guest;
 import models.GuestController;
+import models.Questions2FormData;
+import models.QuestionsFormData;
 import play.*;
 import play.data.Form;
 import play.mvc.*;
@@ -113,11 +116,93 @@ public class Application extends Controller {
 
 	}
 
+	public static Result questions() {
+		Guest guest = GuestController.getLoggedInGuest(ctx());
+		if (guest == null) {
+			return badRequest(error.render());
+		}
+
+		// Check that guest answered decision with yes.
+		if (guest.decision != Decision.YES) {
+			return redirect(routes.Application.decision());
+		}
+
+		QuestionsFormData data = new QuestionsFormData();
+		data.fill(guest);
+
+		Form<QuestionsFormData> form = Form.form(QuestionsFormData.class).fill(
+				data);
+
+		return ok(questions.render(guest, form));
+	}
+
+	public static Result questions2() {
+		Guest guest = GuestController.getLoggedInGuest(ctx());
+		if (guest == null) {
+			return badRequest(error.render());
+		}
+
+		// Check that guest answered decision with yes.
+		if (guest.decision != Decision.YES) {
+			return redirect(routes.Application.decision());
+		}
+
+		Questions2FormData data = new Questions2FormData();
+		data.fill(guest);
+
+		Form<Questions2FormData> form = Form.form(Questions2FormData.class).fill(
+				data);
+
+		return ok(questions2.render(guest, form));
+	}
+
+	public static Result submitQuestions() {
+		Guest guest = GuestController.getLoggedInGuest(ctx());
+		if (guest == null) {
+			return badRequest(error.render());
+		}
+
+		Form<QuestionsFormData> form = Form.form(QuestionsFormData.class)
+				.bindFromRequest();
+		if (form.hasErrors()) {
+			return badRequest(questions.render(guest, form));
+		}
+
+		QuestionsFormData data = form.get();
+		data.update(guest);
+
+		return redirect(routes.Application.questions2());
+	}
+
+	public static Result submitQuestions2() {
+		Guest guest = GuestController.getLoggedInGuest(ctx());
+		if (guest == null) {
+			return badRequest(error.render());
+		}
+
+		Form<Questions2FormData> form = Form.form(Questions2FormData.class)
+				.bindFromRequest();
+		if (form.hasErrors()) {
+			return badRequest(questions2.render(guest, form));
+		}
+
+		Questions2FormData data = form.get();
+		data.update(guest);
+
+		return redirect(routes.Application.summary());
+	}
+
 	public static Result summary() {
 		Guest guest = GuestController.getLoggedInGuest(ctx());
 		if (guest == null) {
 			return badRequest(error.render());
 		}
+
+		// Check that guest answered decision with yes.
+		if (guest.decision != Decision.YES) {
+			return redirect(routes.Application.decision());
+		}
+
 		return ok(summary.render(guest));
 	}
 
@@ -127,6 +212,11 @@ public class Application extends Controller {
 	}
 
 	public static Result reminder(String extension) throws IOException {
+		Guest guest = GuestController.getLoggedInGuest(ctx());
+		if (guest == null) {
+			return badRequest(error.render());
+		}
+
 		File reminderFile = Play.application().getFile(
 				"public/misc/reminder.ics");
 		if (reminderFile == null) {

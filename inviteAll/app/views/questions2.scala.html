@@ -1,0 +1,37 @@
+@(guest: models.Guest, form: Form[_])
+
+@main(Messages("questions.title")) {
+    <h1>@String.format(Messages("questions2.header"), guest.name)</h1>
+    
+    <p>@Messages("questions.message")</p>
+    
+    @helper.form(action = routes.Application.submitQuestions2) {
+            
+        <h2>@Messages("questions.question3")</h2>
+        
+        <div class="answers">
+            <div class="radio"><input type="radio" id="bringsFoodYes" name="bringsFood" value="@models.Decision.YES.toString()"><label onclick="doClick('bringsFoodYes')">@Messages("questions.question3.answerA")</label><input type="text" name="food" value='@form("food").value'></div>
+            <div class="radio"><input type="radio" id="bringsFoodNo" name="bringsFood" value="@models.Decision.NO.toString()"><label onclick="doClick('bringsFoodNo')">@Messages("questions.question3.answerB")</label></div>
+            <div class="radio"><input type="radio" id="bringsFoodMaybe" name="bringsFood" value="@models.Decision.MAYBE.toString()"><label onclick="doClick('bringsFoodMaybe')">@Messages("questions.question3.answerC")</label></div>
+        </div>
+        
+        @if(form("bringsFood").hasErrors) {
+            <p class="form_error">@Messages(form("bringsFood").error.get.message)</p>
+        }
+        
+        @if(form("food").hasErrors) {
+            <p class="form_error">@Messages(form("food").error.get.message)</p>
+        }
+        
+        <script type="text/javascript">
+            // Initial value.
+            changeRadio('bringsFood', '@form("bringsFood").value');
+        </script>
+        	    
+	    <div id="nav">
+	        <a href="@routes.Application.questions()"><button id="back" type="button">@Messages("questions.back")</button></a>
+            <input id="continue" type="submit" value='@Messages("questions.continue")' />
+            <div style="clear: both"></div>  
+	    </div>
+    }  
+}
