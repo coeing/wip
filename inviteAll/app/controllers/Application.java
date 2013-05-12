@@ -1,5 +1,12 @@
 package controllers;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import models.CodeFormData;
 import models.DecisionFormData;
 import models.Guest;
@@ -61,11 +68,13 @@ public class Application extends Controller {
 		if (guest == null) {
 			return badRequest(error.render());
 		}
-		
-		DecisionFormData data = new DecisionFormData();
-		data.decision = guest.decision != null ? guest.decision.toString() : null;
 
-		Form<DecisionFormData> form = Form.form(DecisionFormData.class).fill(data);
+		DecisionFormData data = new DecisionFormData();
+		data.decision = guest.decision != null ? guest.decision.toString()
+				: null;
+
+		Form<DecisionFormData> form = Form.form(DecisionFormData.class).fill(
+				data);
 
 		return ok(decision.render(guest, form));
 	}
@@ -83,7 +92,7 @@ public class Application extends Controller {
 		}
 
 		DecisionFormData data = form.get();
-		
+
 		// Store decision value.
 		guest.decision = data.decisionValue;
 		guest.save();
@@ -102,5 +111,32 @@ public class Application extends Controller {
 			return badRequest(error.render());
 		}
 
+	}
+
+	public static Result summary() {
+		Guest guest = GuestController.getLoggedInGuest(ctx());
+		if (guest == null) {
+			return badRequest(error.render());
+		}
+		return ok(summary.render(guest));
+	}
+
+	static String readFile(String path, Charset encoding) throws IOException {
+		byte[] encoded = Files.readAllBytes(Paths.get(path));
+		return encoding.decode(ByteBuffer.wrap(encoded)).toString();
+	}
+
+	public static Result reminder(String extension) throws IOException {
+		File reminderFile = Play.application().getFile(
+				"public/misc/reminder.ics");
+		if (reminderFile == null) {
+			return badRequest("Reminder file not found");
+		}
+		String icsContent = readFile(reminderFile.getPath(),
+				Charset.defaultCharset());
+		response().setContentType("text/calendar");
+		response().setHeader("Content-Disposition",
+				"inline; filename=reminder." + extension);
+		return ok(icsContent);
 	}
 }

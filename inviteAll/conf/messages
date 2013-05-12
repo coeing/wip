@@ -37,6 +37,8 @@ decision.logout = Fertig
 decision.yes.title = Entscheidung
 decision.yes.header = YIPPIEH!
 decision.yes.message = Freu mich jetzt schon darauf mit dir zu feiern!
+decision.yes.message2 = Jetzt nur noch ein paar kleine Fragen, damit ich besser planen kann.
+decision.yes.continue = Weiter
 
 decision.no.title = Entscheidung
 decision.no.header = Noooooo
@@ -47,6 +49,15 @@ decision.maybe.title = Entscheidung
 decision.maybe.header = Überlegs dir!
 decision.maybe.message = Würde mich sehr freuen, wenn du dich noch dazu entscheidest zu kommen.
 decision.maybe.message2 = Du kannst dich einfach nochmal mit deinem Code einloggen, sobald du dich entschieden hast.
+
+summary.title = Zusammenfassung
+summary.header = Bis bald!
+summary.message = Trag dir die Feier am besten gleich in den Kalender ein:
+summary.date = Samstag, 10.08.2013 ab 20:00 Uhr
+summary.location = Grüner Jäger, Neuer Pferdemarkt 36, 20357 Hamburg
+summary.add_to_calendar = Automatisch zum Kalender hinzufügen:
+summary.back = Zurück
+summary.logout = Ausloggen
 
 error.title = Fehler
 error.header = Unerwarteter Fehler!

@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTAMP:20130512T112830Z
+DTSTART:20130810T180000Z
+DTEND:20130811T030000Z
+SUMMARY:30. Geburtstag Christian Oeing
+DESCRIPTION:Feier anlaesslich des 30. Geburtstags von Christian Oeing mit Tausenden von tollen Gaesten!
+LOCATION:Gruener Jaeger, Neuer Pferdemarkt 36, 20357 Hamburg
+END:VEVENT
+END:VCALENDAR

@@ -31,6 +31,10 @@ img {
 	border: 10px solid #000;
 }
 
+.no_border {
+	border: 0;
+}
+
 .radio input,.radio label {
 	vertical-align: middle;
 	margin-right: 20px;
@@ -91,3 +95,21 @@ a {
 	float: left;
 }
 
+.reminder_list {
+	list-style-type: none;
+	margin-top: 30px;
+}
+
+.reminder_list li {
+	height: 60px;
+}
+
+.reminder_list span {
+    float: left; 
+    width: 250px;
+}
+
+.reminder_list img {
+    border: 0;
+    margin-top: -10px;
+}

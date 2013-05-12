@@ -7,9 +7,11 @@
 	
     <p><img id="error_picture" src='@routes.Assets.at("images/meme-happy.png")' /></p>
     
+    <p>@Messages("decision.yes.message2")</p>
+    
 	<div id="nav">
 		<a href="@routes.Application.decision()"><button id="back" type="button">@Messages("decision.back")</button></a> 
-		<a href="@routes.Application.logout()"><button id="continue" type="button">@Messages("decision.logout")</button></a>
+		<a href="@routes.Application.summary()"><button id="continue" type="button">@Messages("decision.yes.continue")</button></a>
 		<div style="clear: both"></div>
 	</div>
 }
