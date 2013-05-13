@@ -1,7 +1,7 @@
 @(form: Form[_])
 
 @main(Messages("login.title")) {
-    <h1>@Messages("login.header")</h1>
+    <h1 style="text-align: center;">@Messages("login.header")</h1>
     
     <h2 id="login_message">@Messages("login.message")</h2>
     
@@ -12,8 +12,10 @@
     	<p id="code_error">@Messages(form("code").error.get.message)</p>
     }
     
+    <p><img id="welcome_picture" style="width: 250px;" src='@routes.Assets.at("images/cake_is_a_lie.png")' /></p>    
+    
     <div id="nav">
-    <input id="continue" type="submit" value="Enter" />
+    <input style="display: block; float: none; margin: auto;" id="continue" type="submit" value="Enter" />
     <div style="clear: both"></div>
     </div>  
     }
