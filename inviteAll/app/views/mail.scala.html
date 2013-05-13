@@ -1,0 +1,16 @@
+@(guest: models.Guest)
+
+<body>
+
+<h2>@String.format(Messages("mail.header"), guest.name)</h2>
+
+<p>@Html(Messages("mail.html.message1"))<br />
+@Html(String.format(Messages("mail.html.message2"), guest.code))</p>
+
+<p>@Messages("mail.goodbye")<br/>
+@Messages("mail.goodbye2")
+</p>
+
+<p>@Messages("mail.post")</p>
+
+</body>

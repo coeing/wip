@@ -83,6 +83,21 @@ summary.add_to_calendar = Automatisch zum Kalender hinzufügen:
 summary.back = Zurück
 summary.logout = Ausloggen
 
+mail.title = Geburtstagseinladung 2.0
+
+mail.header = Hallo %s!
+
+mail.txt.message1 = Unter http://birthday.oeing.eu liegt eine Einladung für dich bereit!
+mail.txt.message2 = Du kannst sie mit deinem persönlichen Einladungscode abrufen: %s
+
+mail.html.message1 = Unter <a href="http://birthday.oeing.eu">http://birthday.oeing.eu</a> liegt eine Einladung für dich bereit!
+mail.html.message2 = Du kannst sie mit deinem persönlichen Einladungscode abrufen: <strong>%s</strong>
+
+mail.goodbye = Gruß
+mail.goodbye2 = Christian
+
+mail.post = P.S.: Sieht vielleicht ein bisschen aus wie Spam, du kannst aber getrost auf den Link klicken. Dafür stehe ich mit meinem guten Namen! ;)
+
 error.invalid_value = Ungültiger Wert. Das, äh, sollte nicht passieren!
 
 error.title = Fehler

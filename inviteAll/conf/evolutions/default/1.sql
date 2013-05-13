@@ -5,8 +5,10 @@
 
 create table guest (
   id                        integer auto_increment not null,
+  is_admin                  tinyint(1) default 0,
   name                      varchar(255),
   last_name                 varchar(255),
+  email                     varchar(255),
   code                      varchar(255),
   is_group                  tinyint(1) default 0,
   decision                  integer,
@@ -14,6 +16,7 @@ create table guest (
   needs_bed                 integer,
   brings_food               integer,
   food                      varchar(255),
+  got_mail                  tinyint(1) default 0,
   constraint ck_guest_decision check (decision in (0,1,2)),
   constraint ck_guest_brings_partner check (brings_partner in (0,1,2)),
   constraint ck_guest_needs_bed check (needs_bed in (0,1,2)),

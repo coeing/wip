@@ -33,8 +33,17 @@ public class Global extends GlobalSettings {
 				Guest guest = (Guest) guests.get(i);
 				Logger.info(String.format("Found guest: %s", guest));
 				
-				if (GuestController.findByName(guest.name, guest.lastName) != null)
+				Guest existingGuest = GuestController.findByName(guest.name, guest.lastName);
+				if (existingGuest != null)
 				{
+					// Update email address.
+					if (existingGuest.email != guest.email)
+					{
+						existingGuest.email = guest.email;
+						existingGuest.gotMail = false;
+						existingGuest.save();
+					}
+					
 					continue;
 				}
 

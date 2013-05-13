@@ -6,6 +6,11 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
+
+import com.feth.play.module.mail.Mailer;
+import com.feth.play.module.mail.Mailer.Mail;
+import com.feth.play.module.mail.Mailer.Mail.Body;
 
 import models.CodeFormData;
 import models.Decision;
@@ -16,6 +21,7 @@ import models.Questions2FormData;
 import models.QuestionsFormData;
 import play.*;
 import play.data.Form;
+import play.i18n.Messages;
 import play.mvc.*;
 
 import views.html.*;
@@ -150,8 +156,8 @@ public class Application extends Controller {
 		Questions2FormData data = new Questions2FormData();
 		data.fill(guest);
 
-		Form<Questions2FormData> form = Form.form(Questions2FormData.class).fill(
-				data);
+		Form<Questions2FormData> form = Form.form(Questions2FormData.class)
+				.fill(data);
 
 		return ok(questions2.render(guest, form));
 	}
@@ -190,6 +196,45 @@ public class Application extends Controller {
 		data.update(guest);
 
 		return redirect(routes.Application.summary());
+	}
+
+	public static Result sendMails() {
+		Guest guest = GuestController.getLoggedInGuest(ctx());
+		if (guest == null || !guest.isAdmin) {
+			return badRequest(error.render());
+		}
+
+		List<Guest> guests = GuestController.findGuests();
+		int mailsSend = 0;
+		for (int index = 0; index < guests.size(); ++index) {
+			Guest mailGuest = guests.get(index);
+			if (mailGuest.gotMail) {
+				continue;
+			}
+
+			if (sendMail(mailGuest)) {
+				++mailsSend;
+				mailGuest.gotMail = true;
+				mailGuest.save();
+			}
+		}
+
+		return ok("Mails send: " + mailsSend);
+	}
+
+	private static boolean sendMail(Guest guest) {
+
+		final String email = guest.email;
+		if (email == null) {
+			return false;
+		}
+
+		final Body body = new Body(views.txt.mail.render(guest).toString(),
+				views.html.mail.render(guest).toString());
+		Mailer.getDefaultMailer().sendMail(Messages.get("mail.title"), body,
+				email);
+
+		return true;
 	}
 
 	public static Result summary() {

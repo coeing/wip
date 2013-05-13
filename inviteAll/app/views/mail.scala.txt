@@ -1,0 +1,10 @@
+@(guest: models.Guest)
+@String.format(Messages("mail.header"), guest.name)
+
+@Messages("mail.txt.message1")
+@String.format(Messages("mail.txt.message2"), guest.code)
+
+@Messages("mail.goodbye")
+@Messages("mail.goodbye2")
+
+@Messages("mail.post")

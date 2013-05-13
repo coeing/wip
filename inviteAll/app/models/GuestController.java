@@ -1,5 +1,7 @@
 package models;
 
+import java.util.List;
+
 import helpers.CodeGenerator;
 import play.db.ebean.Model.Finder;
 import play.mvc.Http.Context;
@@ -38,5 +40,9 @@ public class GuestController {
 			code = generator.nextCode();
 		}
 		return code;
+	}
+
+	public static List<Guest> findGuests() {
+		return finder.all();
 	}
 }

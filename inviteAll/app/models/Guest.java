@@ -24,9 +24,13 @@ public class Guest extends Model {
 	@Id
 	public Integer id;
 
+	public boolean isAdmin;
+
 	public String name;
 
 	public String lastName;
+	
+	public String email;
 
 	@Column(unique = true)
 	public String code;
@@ -43,4 +47,6 @@ public class Guest extends Model {
 
 	@Size(max = 255)
 	public String food;
+
+	public boolean gotMail;
 }
