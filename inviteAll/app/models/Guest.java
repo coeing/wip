@@ -26,6 +26,8 @@ public class Guest extends Model {
 
 	public String name;
 
+	public String lastName;
+
 	@Column(unique = true)
 	public String code;
 

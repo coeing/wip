@@ -6,6 +6,7 @@
 create table guest (
   id                        integer auto_increment not null,
   name                      varchar(255),
+  last_name                 varchar(255),
   code                      varchar(255),
   is_group                  tinyint(1) default 0,
   decision                  integer,

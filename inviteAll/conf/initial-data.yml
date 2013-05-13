@@ -1,13 +1,10 @@
 guests:
 - !!models.Guest
    name: Heike
-   code: ABC
-   isGroup: false
+   lastName: Kemper
 - !!models.Guest
    name: Nick
-   code: SG
-   isGroup: false
+   lastName: Prühs
 - !!models.Guest
    name: Jan
-   code: SNYP
-   isGroup: false
+   lastName: Tammen
