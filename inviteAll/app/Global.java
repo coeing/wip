@@ -37,7 +37,7 @@ public class Global extends GlobalSettings {
 				if (existingGuest != null)
 				{
 					// Update email address.
-					if (existingGuest.email != guest.email)
+					if (existingGuest.email == null)
 					{
 						existingGuest.email = guest.email;
 						existingGuest.gotMail = false;
