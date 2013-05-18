@@ -15,3 +15,6 @@ dist
 /.settings
 /.target
 /.metadata
+
+/conf/dev.conf
+/conf/initial-data.yml

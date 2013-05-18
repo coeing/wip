@@ -1,0 +1,5 @@
+guests:
+- !!models.Guest
+   name: Test
+   lastName: Guest
+   email: test@guest.de
